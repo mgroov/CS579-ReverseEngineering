@@ -9,4 +9,4 @@ In order to properly isolate the samples we are reverse engineering I took multi
 #### Why Isolate?
 We isolate the target system so that we can run dangerous malware and analyze their effects. Most importantly by isolating we prevent damage to our hardware as well as dangerous software such as worms from spreading to our entire network. Without proper isolation we can potentially damage and loose a piece of hardware or unintentionally unleash an attack on a network. 
 
-#### Analysis Tools
+#### Analysis Tool(s)
