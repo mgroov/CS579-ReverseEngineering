@@ -1,7 +1,7 @@
-### Week 1 Simple Static Analysis
+## Week 1 Simple Static Analysis
   summary here
 
-#### Lab 1-1
+### Lab 1-1
   
 ##### Executive Summary (Most important takeaways for this malware)
 This malware sample is of two programs working in concert. It has a lab1.dll file which seems to launch and run programs on threads. And a lab01 exe that  seems to edit files. 
@@ -24,10 +24,10 @@ Delete files with the same hashes.
 I used strngs to look at the ascii of the files. In dll you can see the creation of threads and mutex. In the exe you can see it acessing files as well as a string saying this program will destroy your computer. In order to see the hashes of the files I used powershells built in function. I also used both peview and dependency checker and was unable to determine more useful information. 
 
 
-#### Lab 1-2
+### Lab 1-2
 
 
-#### Lab 1-3
+### Lab 1-3
 
 
-#### Lab 1-4
+### Lab 1-4
