@@ -4,7 +4,7 @@
 ## Lab 1-1
   
 #### Executive Summary (Most important takeaways for this malware)
-This malware sample is of two programs working in concert. It has a lab1.dll file which seems to launch and run programs on threads. And a lab01 exe that  seems to edit files. 
+This malware sample is of two programs working in concert. It has a lab1.dll file which seems to launch and run programs on threads. And a lab01 exe that  seems to edit files. This malware is for a Windows sytem but a system that is runnin windows defender will most likely catch the program.
 #### Indicators of Compromise (What to look for to see if you are infected)
  Compilation Dates: 
  lab01-01.dll 12/19/10 \
@@ -27,7 +27,7 @@ I used strngs to look at the ascii of the files. In dll you can see the creation
 
 #### Executive Summary (Most important takeaways for this malware)
 
-This lab consisted of a single executable that seems to connect to a malicous website and download information and create a file. It is believed that it then hides this file for later use but I was unable to confirm those actions. 
+This lab consisted of a single executable that seems to connect to a potentially malicous website and download information and create a file.  
 
 #### Indicators of Compromise (What to look for to see if you are infected)
 lab01-02.exe \
