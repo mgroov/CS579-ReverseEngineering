@@ -43,8 +43,7 @@ Deleting any files matching that hash
 
 
 #### Evidence (How did you find each of the above? You can mention here any work you did that did not yield any results.)
-While using strings I noticed the executable pointing to http://wwareanysisbook.coom. It also refrecnes  
-what is presumably internet explorer. The string also reveals that the program creates a file and processes in memory. I used both dependency walker and peveiew as well but did not gain any more relevent information.
+While using strings I noticed the executable pointing to http://wwareanysisbook.coom. It also references  what is presumably internet explorer ```Int6net Explo!r```. The string also reveals that the program creates a file and processes in memory. I used both dependency walker and peveiew as well but did not gain any more relevent information.
 
 ## Lab 1-3
 
