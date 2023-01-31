@@ -30,6 +30,9 @@ I used strngs to look at the ascii of the files. In dll you can see the creation
 This lab consisted of a single executable that seems to connect to a potentially malicous website and download information and create a file.  
 
 #### Indicators of Compromise (What to look for to see if you are infected)
+
+compiation date: 1/19/2011 
+
 lab01-02.exe \
 SHA256 Hash: C876A332D7DD8DA331CB8EEE7AB7BF32752834D4B2B54EAA362674A2A48F64A6
 
