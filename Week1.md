@@ -27,7 +27,13 @@ I used strngs to look at the ascii of the files. In dll you can see the creation
 
 #### Executive Summary (Most important takeaways for this malware)
 
-This lab consisted of a single executable that seems to connect to a potentially malicous website and download information and create a file.  
+This lab consisted of a singlur executable that was packed in the upx format. Once unpacked it does multiple things.
+
+1) Creates threads and reads and messes with files 
+2) Opens a service control manager
+3) opens a url to http://www.malwareanalysisbook.com via Internet Explorer
+
+This is dangerous because it will launch again every time you restart your computer via the scmanager.
 
 #### Indicators of Compromise (What to look for to see if you are infected)
 
@@ -36,17 +42,18 @@ compiation date: 1/19/2011
 lab01-02.exe \
 SHA256 Hash: C876A332D7DD8DA331CB8EEE7AB7BF32752834D4B2B54EAA362674A2A48F64A6
 
-unwaranted connection to http://wwareanysisbook.coom.
+unwaranted connection to http://www.malwareanalysisbook.com
 
 #### Mitigations (Have you discovered anything that could be used to fix this infection
 
-blocking/firewalling acess to the website http://wwareanysisbook.coom.
+blocking/firewalling acess to the website http://www.malwareanalysisbook.com
 
 Deleting any files matching that hash 
 
 
 #### Evidence (How did you find each of the above? You can mention here any work you did that did not yield any results.)
-While using strings I noticed the executable pointing to http://wwareanysisbook.coom. It also references  what is presumably internet explorer ```Int6net Explo!r```. The string also reveals that the program creates a file and processes in memory. I used both dependency walker and peveiew as well but did not gain any more relevent information.
+While using strings I noticed the executable pointing to http://www.malwareanalysisbook.com. It also uses internet explorer. The string also reveals that the program creates a file and processes in memory. In strings I uwe also see it launching a ```StartServiceCtrlDispatcherA
+ OpenSCManagerA```. This is a runtime service control. presuming the malware will relaunch each time you run your computer. I also used both dependency walker and peveiew as well but did not gain any more relevent information.
 
 ## Lab 1-3
 
