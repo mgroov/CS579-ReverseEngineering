@@ -1,5 +1,5 @@
 # Week 3: Dynamic Analysis 
-
+ This week we focused on setting up a dynamic analysis system. This focused on a internal network reaching to a secondary virtual machine that acted as a complete internet connection allowing us to run programs without fear of damage spreading to outside systems. 
 ## Lab 3-1
   
 #### Executive Summary (Most important takeaways for this malware)
