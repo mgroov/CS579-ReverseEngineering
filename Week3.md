@@ -9,6 +9,7 @@
 #### Mitigations (Have you discovered anything that could be used to fix this infection?)
 
 #### Evidence (How did you find each of the above? You can mention here any work you did that did not yield any results.)
+ First I ran strings then saw that the file was poining to a website as well as some specific files. The lack of imports implied that the file is packed. 
 
 ## Lab 3-2
   
