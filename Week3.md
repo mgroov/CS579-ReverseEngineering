@@ -6,7 +6,7 @@
 This malware appears to be a launcher that uses a web resource to either update or download more code. It does this by reaching out to praticalmalware analysis.com. We also know that it creates or edits a file in system 32. I could not tell more as it was packed in PENinja. 
 
 #### Indicators of Compromise (What to look for to see if you are infected)
-lab3-01.exe: 
+lab3-01.exe: SHA-256 eb84360ca4e33b8bb60df47ab5ce962501ef3420bc7aab90655fd507d2ffcedd 
 
 #### Mitigations (Have you discovered anything that could be used to fix this infection?)
 The first mitigation is to take the hash of the file and prevent it from running or being downloaded. The second is to set a firewall rule against the outside resource. 
@@ -20,7 +20,7 @@ The first mitigation is to take the hash of the file and prevent it from running
  This virus appears to be a launcher that creates and deletes services. Then it connects to the internet and downloads a specific resource.
 
 #### Indicators of Compromise (What to look for to see if you are infected)
-lab3-02.dll
+lab3-02.dll: SHA-256 5eced7367ed63354b4ed5c556e2363514293f614c2c2eb187273381b2ef5f0f9 
 
 #### Mitigations (Have you discovered anything that could be used to fix this infection?)
 Set firewall rule to block the domain listed. As well as antivirus to block the file. 
@@ -37,7 +37,7 @@ Using dynamic analysis I learned that this malware is a keylogger. It creates a 
 
 #### Indicators of Compromise (What to look for to see if you are infected)
 
-lab03-03.exe:
+lab03-03.exe:SHA-256 ae8a1c7eb64c42ea2a04f97523ebf0844c27029eb040d910048b680f884b9dce 
 
 A orphaned: svchost.exe
 
