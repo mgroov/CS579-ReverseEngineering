@@ -2,7 +2,8 @@
  This week we focused on setting up a dynamic analysis system. This focused on a internal network reaching to a secondary virtual machine that acted as a complete internet connection allowing us to run programs without fear of damage spreading to outside systems. 
 ## Lab 3-1
   
-#### Executive Summary (Most important takeaways for this malware)
+#### Executive Summary (Most important takeaways for this malware)\
+This malware appears to be a launcher that uses a web resource to either update or download more code. It does this by reaching out to praticalmalware analysis.com. We also know that it creates or edits a file in system 32. I could not tell more as it was packed in PENinja. 
 
 #### Indicators of Compromise (What to look for to see if you are infected)
 lab3-01.exe: 
