@@ -1,5 +1,5 @@
 # Week 3: Dynamic Analysis 
- This week we focused on setting up a dynamic analysis system. This focused on a internal network reaching to a secondary virtual machine that acted as a complete internet connection allowing us to run programs without fear of damage spreading to outside systems. 
+ This week we focused on setting up a dynamic analysis system. This focused on a internal network reaching to a secondary virtual machine that acted as a complete internet connection allowing us to run programs without fear of damage spreading to outside systems. Throughout this week I learned how to use tools such as procmon wireshark to analyse what malware does as it runs. 
 ## Lab 3-1
   
 #### Executive Summary (Most important takeaways for this malware)\
@@ -17,19 +17,36 @@ The first mitigation is to take the hash of the file and prevent it from running
 ## Lab 3-2
   
 #### Executive Summary (Most important takeaways for this malware)
+ This virus appears to be a launcher that creates and deletes services. Then it connects to the internet and downloads a specific resource.
 
 #### Indicators of Compromise (What to look for to see if you are infected)
+lab3-02.dll
 
 #### Mitigations (Have you discovered anything that could be used to fix this infection?)
+Set firewall rule to block the domain listed. As well as antivirus to block the file. 
 
 #### Evidence (How did you find each of the above? You can mention here any work you did that did not yield any results.)
+
+First I ran strings. The file appears to call a serve.html as well as praticalmalwareanalysis.com. It also refrences INA and IRIP. I then looked at the file using dependency walker from this we see a bunch of imports centered arround creating and destroying services. I did not figure out how to run the dll. More time would be needed to properly run and analyze. 
 
 ## Lab 3-3
   
 #### Executive Summary (Most important takeaways for this malware)
 
+Using dynamic analysis I learned that this malware is a keylogger. It creates a orphaned svchost.exe that stores all keylogs into praticalmalwareanalysis.log. 
+
 #### Indicators of Compromise (What to look for to see if you are infected)
+
+lab03-03.exe:
+
+A orphaned: svchost.exe
+
+praticalmalwareanalysis.log
 
 #### Mitigations (Have you discovered anything that could be used to fix this infection?)
 
+We should set our antivirus software to delete any orphaned svchost.exe processes not in service. As well as delete any files with matching hashes to lab03-03.exe.
+
 #### Evidence (How did you find each of the above? You can mention here any work you did that did not yield any results.)
+
+By following what was shown in the book using procmon. I was able to see that the exe creates and orphans a process svchost.exe. The malware also uses deception by having the image of the process look like a clean process. Conversely in memory we can see it is acting differently in the strings of memory we can see the create file of praticalmalwareanalysis.log. I also saw key strokes such ```[SHIFT]```. This means that most likely our malware is a keylogger.  
