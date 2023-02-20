@@ -19,18 +19,33 @@ The data section contains values that are put in place when the program initiall
 The heap contains the dynamic memory as the program runs. It creates and frees up used data segments. It is considered dynamic due to how much its contents can change during execution.
 
 #### 6.   What is in the code section of a program's virtual memory space?
+
+The code segment contains the instructions fetched by the cpu and orchestrates how the program will run. 
+
 #### 7.   What does the `inc` instruction do, and how many operands does it take?
+
+The inc instruction increments a register by one. It takes a single operand the register to be incremented.
+
 #### 8.   If I perform a `div` instruction, where would I find the remainder of the binary division (modulo) ?
+
+The remainder is stored in EDX.
+
 #### 9.   How does `jz` decide whether to jump or not?
+
+jz jumps to the location when the zf register is equal to 1. 
+
 #### 10.   How does `jne` decide whether to jump or not?
+
+jne wil jump when zf equals 0. This is typically done after a cmp and means a src and dest operands didn't match. 
+
 #### 11.   What does a `mov` instruction do?
 #### 12.   What does the `TF` flag do and why is it useful for debugging?
 #### 13.   Why would an attacker want to control the EIP register inside a program they want to take control of?
 #### 14.   What is the AL register and how does it relate to EAX?
 #### 15.    What is the result of the instruction `xor eax, eax` and where is it stored?
-============================================================================================
+
 ## Graduate Student Questions
-============================================================================================
+
 
   #### 1.  What does the `leave` instruction do in terms of registers to leave a stack frame?
   #### 2.  What `pop` instruction is `retn` equivalent to?
@@ -38,6 +53,6 @@ The heap contains the dynamic memory as the program runs. It creates and frees u
   #### 4.  What is a segmentation fault (a.k.a. a segfault)?
   #### 5.  What are the ESI and EDI registers for?
 
-============================================================================================
+
 ## Password Cracking 
-============================================================================================
+
