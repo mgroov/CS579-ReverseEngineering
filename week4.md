@@ -39,10 +39,24 @@ jz jumps to the location when the zf register is equal to 1.
 jne wil jump when zf equals 0. This is typically done after a cmp and means a src and dest operands didn't match. 
 
 #### 11.   What does a `mov` instruction do?
+
+move a piece of memory or data into a specific location.
+
 #### 12.   What does the `TF` flag do and why is it useful for debugging?
+
+The TF flag is reffered to the tap flag and if set tells the cpu to run one instruction at a time. This is important for debugging because you can track values and see on what instruction the values seem to be incorrect. 
+
 #### 13.   Why would an attacker want to control the EIP register inside a program they want to take control of?
+
+The EIP is the instruction pointer. If they control that they can control what lines are executed next. 
+
 #### 14.   What is the AL register and how does it relate to EAX?
+
+AL is the lower 8 bits of the EAX 32 bits. 
+
 #### 15.    What is the result of the instruction `xor eax, eax` and where is it stored?
+
+The result is zero and it is stored back into eax. 
 
 ## Graduate Student Questions
 
