@@ -62,10 +62,24 @@ The result is zero and it is stored back into eax.
 
 
   #### 1.  What does the `leave` instruction do in terms of registers to leave a stack frame?
+  
+ Leave sets the ESP equal to EPB and pops EPB of the stack such that the function it is returning to can properly acess its values. 
+  
   #### 2.  What `pop` instruction is `retn` equivalent to?
+  
+  ret is equivalent to pop EPB this is because ret returns to the function that called the current frame or epb. 
+  
   #### 3.  What is a stack overflow?
+  
+  A stack overflow is a form of attack where the attacker uses a large input in order to attempt to reach or rewrite target pieces of memory. E.G if there is a admin flag or password write so much data in a response such that we can trip that flag or change the password.
+  
   #### 4.  What is a segmentation fault (a.k.a. a segfault)?
+  
+  A notification raised by the hardware when the program attempts to access a protected piece of memory.
+  
   #### 5.  What are the ESI and EDI registers for?
+  
+  They are used in commands involving data buffer manipulation. ESI is the source index register and EDI is the destination register.
 
 
 ## Password Cracking 
