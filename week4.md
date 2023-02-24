@@ -84,3 +84,4 @@ The result is zero and it is stored back into eax.
 
 ## Password Cracking 
 
+The first step was to install ghidra. This is a tool released by the NSA in order to learn more about file decompilation. This involved installing dependencies such as gradle. I personally struggled with the gradle dependency as I use apt at first which installed a 4.3 version and we needed a 7.2 which ended in fixing a broken install. Once installed I ran ghidra on the file. The first step was to look at the main function and attempt to evaluate what it was doing. Main appeared to call out to a secondary function for validation. When looking at that secondary function I noticed that it modulod 1223. Then returned 1 if remainder was 0. When testing this the password 1223 worked. This was also an example of decompilation avoidance as a program such as strings would not pick up on this check. 
