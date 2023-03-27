@@ -18,3 +18,4 @@ Easy crackme 3 was also in a similair executable to easy crackme 1 and 2. When r
 
 #### control flow 1 
 
+Control flow 1 is made of a single executable. When we first ran it we could see that if the password we attempt to enter is above a certain ammount it enters a new condition because it prints rock. Knowing what we know from week 5 and the rock paper scissors example we assumed that the password will require multiple steps. Knowing this strings and uftrace are unlikely to be of much help. From there we loaded the file into ghidra. In ghidra changing the types of the input variables help clarify some of the functions. In the file there is main() , rock() paper(), scissors(), lizzard and spock(). We started by first looking for our sink or win condition. 
