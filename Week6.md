@@ -14,7 +14,7 @@ Easy crackme 2 was similair to easycrackme1. Once again running strings in a sim
 
 Easy crackme 3 was also in a similair executable to easy crackme 1 and 2. When running strings on the file a string strawberry appeared however, trying yielded a fail result from the crackme. I moved from strings to uftrace. Running uftrace at first gave no satisfactory results. However, using the -a flag showed the arguments to the standarc calls in which we can see that the author of the file used string concatination to confuse strings. Inside the compare function I saw a string strawberrykiwi and using that solved the crackme.
 
-## Control Flow 
+## Control Flow(s) 
 
 #### control flow 1 
 
