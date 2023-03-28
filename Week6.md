@@ -24,6 +24,10 @@ Easy crackme 3 was also in a similair executable to easy crackme 1 and 2. When r
 
 #### control flow 2 
 
-The first thing I did was run control flow with both strings and uftrace. This did not reveal much in either case the main thing revealed was that it appears to follows a rock,paper,scissors structure. 
+[control flow 2 report](week6/controlflow2.md)
+
+#### control flow 3 
+
+[control flow 3 report](week6/controlflow3.md). 
 
 
