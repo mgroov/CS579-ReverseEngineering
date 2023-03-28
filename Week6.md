@@ -24,6 +24,21 @@ Control flow 1 is made of a single executable. When we first ran it we could see
 The next step was to create a control flow graph from our win condition to the start. 
 ![image width="500" height="500"](https://user-images.githubusercontent.com/44854053/228060907-6f291430-eca6-4389-a393-dbc892b7423a.png)
 
-From there we went backwards from our sink and generated rules for what the password must be. 
+From there we went backwards from our sink and generated rules for what the password must be.
+1. 16th char must be * \
+2. 2nd char must be 6
+3. 1st char is A
+4. 4th char is 2
+5. 8th char is %
+6. the total number of chars >= 16
+
+From there it was relatively simply to create a python list that followed that ruleset every single time. 
+```
+note to self insert crackme prog here
+```
+
+#### control flow 2 
+
+The first thing I did was run control flow with both strings and uftrace. This did not reveal much in either case the main thing revealed was that it appears to follows a rock,paper,scissors structure. 
 
 
