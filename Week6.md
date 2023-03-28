@@ -33,9 +33,9 @@ From there we went backwards from our sink and generated rules for what the pass
 6. the total number of chars >= 16
 
 From there it was relatively simply to create a python list that followed that ruleset every single time. 
-```
-note to self insert crackme prog here
-```
+
+[a relative link](week6/control1crack.py)
+
 
 #### control flow 2 
 
