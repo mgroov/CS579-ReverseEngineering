@@ -19,7 +19,7 @@ Easy crackme 3 was also in a similair executable to easy crackme 1 and 2. When r
 
 #### control flow 1 
 
-[control flow report](week6/control1.md)
+[control flow report](week6/controlflow1.md)
 
 
 #### control flow 2 
