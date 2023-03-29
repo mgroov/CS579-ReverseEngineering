@@ -30,5 +30,6 @@ for i in pas:
 print()
 
 ```
+[control 1 crack](control1crack.py)
 
 
