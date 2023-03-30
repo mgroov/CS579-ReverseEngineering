@@ -29,11 +29,15 @@ From here we need to further refine the rule set:
 
 ```
 1. pass.len() == 16 (main-> rock)
-2. pass[5] != pass[6] && pass[1] == 1 (rock -> paper)
+2. pass[5] == pass[6] == pass[1] == pass[3] (rock -> paper)
 3. pass[6] == pass[7] (paper->scissors)
 4. pass[10] == pass[12] (scissors-> lizard)
 5. pass[8] ^ pass[7] >= 4 or  pass[8] = char(pass[7] + 4) (lizard->spock)
 6. pass[9] == pass[7] && pass[12] == 4 (spock-<win)
 ```
+Testing the keygen based on the rules
+
+![image](https://user-images.githubusercontent.com/44854053/228735398-9dc356da-7871-4004-b35b-190d5705dd26.png)
 
 
+[control flow 3 keygen](control3crack.py)
