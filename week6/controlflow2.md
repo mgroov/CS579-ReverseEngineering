@@ -19,7 +19,7 @@ In order to get to paper from rock we must follow our 7th and last rule.
 2. Password[11] must be the char '*' (spock->win)
 4. Password[13] must be the char '6' (lizzard->spock)
 5. Password[10] must be the char 'A' (scissors->lizzard)
-6. Password[8] must be the char '#' (paper->scissors) ***
+6. Password[8] must be the char '#' (paper->scissors) 
 7. Password[6] must be the char 'Y' (rock->paper)
 
 I then made and tested a keygen:

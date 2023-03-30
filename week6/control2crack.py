@@ -1,5 +1,5 @@
 from typing import cast
-#control flow 1 pass gen
+#control flow 2 pass gen
 pas = ['A']*20
 
 pas[11]='*'
