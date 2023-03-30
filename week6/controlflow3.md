@@ -19,10 +19,10 @@ From paper -> scissors:
 1. ((char)(pass[6] ^ pass[7]) < 3) eval as true
 
 From rock-> paper:
-((int)pass[1] + (int)pass[3]) - (int)pass[5] == (int)pass[6]) true or non zero
+1.((int)pass[1] + (int)pass[3]) - (int)pass[5] == (int)pass[6]) true or non zero
 
 From main-> Rock;
-password must be exactly 16 chars in length (maybe 24 with 8 chars of buffer in front) 
+1.password must be exactly 16 chars in length (maybe 24 with 8 chars of buffer in front) 
 ```
 
 From here we need to further refine the rule set:
@@ -32,5 +32,8 @@ From here we need to further refine the rule set:
 2. pass[5] != pass[6] && pass[1] == 1 (rock -> paper)
 3. pass[6] == pass[7] (paper->scissors)
 4. pass[10] == pass[12] (scissors-> lizard)
-5.
+5. pass[8] ^ pass[7] >= 4 or  pass[8] = char(pass[7] + 4) (lizard->spock)
+6. pass[9] == pass[7] && pass[12] == 4 (spock-<win)
 ```
+
+
