@@ -37,7 +37,7 @@ From here we need to further refine the rule set:
 ```
 Testing the keygen based on the rules
 
-![image](https://user-images.githubusercontent.com/44854053/228735398-9dc356da-7871-4004-b35b-190d5705dd26.png)
+![image](https://user-images.githubusercontent.com/44854053/229057043-4bc4a23c-6a23-443f-b7d9-a2805dba5bcf.png)
 
 
 [control flow 3 keygen](control3crack.py)
