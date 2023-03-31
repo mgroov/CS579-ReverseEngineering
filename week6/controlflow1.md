@@ -14,22 +14,8 @@ From there we went backwards from our sink and generated rules for what the pass
 
 From there it was relatively simply to create a python list that followed that ruleset every single time. 
 
-```
-from typing import cast
-#control flow 1 pass gen
-pas = ['A']*20
+![image](https://user-images.githubusercontent.com/44854053/229046427-d0c92eb8-e009-45d7-9772-7e500cf86547.png)
 
-pas[15]='*'
-pas[1]='6'
-pas[7]='%'
-pas[3]='2'  
-
-for i in pas:
-  print(cast(type(i),i),end="")
-
-print()
-
-```
 [control 1 crack](control1crack.py)
 
 
