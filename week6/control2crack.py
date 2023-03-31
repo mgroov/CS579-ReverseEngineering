@@ -1,9 +1,16 @@
 from typing import cast
 #control flow 2 pass gen
-pas = ['A']*20
+import random
+
+a=random.randint(3, 11)
+#control flow 1 pass gen
+alpha = ['A','b','c','d','e','f','g','h','i','j','k']
+
+pas = [alpha[a]]*20
 
 pas[11]='*'
 pas[13]='6'
+pas[10] = 'A'
 pas[8]='#'
 pas[6]='Y'  
 

@@ -1,8 +1,15 @@
 from typing import cast
+
+import random
+
+a=random.randint(3, 11)
+#control flow 1 pass gen
+alpha = ['A','b','c','d','e','f','g','h','i','j','k']
+
 #control flow 3 pass gen
 
 #main->rock
-pas = ['A']*16
+pas = [alpha[a]]*16
 
 #rock -> paper
 
