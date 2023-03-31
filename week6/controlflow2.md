@@ -23,7 +23,7 @@ In order to get to paper from rock we must follow our 7th and last rule.
 7. Password[6] must be the char 'Y' (rock->paper)
 
 I then made and tested a keygen:
-![image](https://user-images.githubusercontent.com/44854053/228640214-b112b7a3-1427-40b8-8a0b-b836e48051ee.png)
+![image](https://user-images.githubusercontent.com/44854053/229056283-7bff0b64-56d9-4d31-9fc1-0f01670fa2cf.png)
 
 
 [control flow 2 keygen](control2crack.py)
