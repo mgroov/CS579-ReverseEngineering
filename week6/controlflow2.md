@@ -1,19 +1,20 @@
 # Control Flow 2 
 
-The first thing I did was run control flow with both strings and uftrace. This did not reveal much in either case, the main thing revealed was that it appears to follows a rock,paper,scissors structure.
+The first thing I did was run control flow with both strings and uftrace. This did not reveal much in either case, the main thing revealed was that it appears to follow a rock, paper, scissors structure.
 
-Next I opened the file in Ghida. My methodology was to work from main to our sink. 
+Next, I opened the file in Ghida. My methodology was to work from main to our sink.
 
-In main I found the first rule. From there the only place to reach is rock. 
-From there I decided working backwards from our sink. From there I found win being called by spock. This is where I got my second rule. 
+In main, I found the first rule. From there the only place to reach is rock.
+From there I decided to work backward from our sink. From there I found win being called by Spock. This is where I got my second rule.
 
-Then in order to get to spock we must follow a rule in lizzard. 
+Then to get to Spock we must follow a rule in lizard.
 
-Then to call lizard we must fufill the condition in scissors. 
+Then to call lizard we must fulfill the condition in scissors.
 
-In paper the rule to call scissors can be simplified if we always ensure the and check passes therefore we set it to s specific char such that it will always pass.
+In paper the rule to call scissors can be simplified if we always ensure the and check passes therefore we set it to a specific char such that it will always pass.
 
-In order to get to paper from rock we must follow our 7th and last rule. 
+To get to paper from rock we must follow our 7th and last rule.
+
 
 1. Password >= 16 chars long (past main->rock)
 2. Password[11] must be the char '*' (spock->win)
