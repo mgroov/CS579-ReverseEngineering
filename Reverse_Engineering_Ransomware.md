@@ -15,7 +15,7 @@ Using strings revealed many function headers but also 2 interesting strings ```d
 
 From there it became apparent that in order to decrypt a large ammount of files A script would be necessary.
 
-[Developed Script]() \
+[Developed Script](ransom/decrypt.sh) \
 \
 [Recovered Important](ransom/important2.docx) \
 [Recovered secret](ransom/secret2.txt)
