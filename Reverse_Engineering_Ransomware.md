@@ -4,8 +4,8 @@
 
 For ransom ware 1 running strings and uftrace revealed nothing of value. However, when opening the file in ghidra I was able to see what appeared to be a password. ``` lumpy_cactus_fruit ``` Using this I ran the ransomware1 and it decrypted only one of the two files encrypted. Further analysis of the ransomware revealed that the decryptor would only work on the important.docx.payup. From there I re-named the other file and re-ran the program this worked and all files were sucessfully recovered. 
 
-[Recovered Important]() \
-[Recovered secret]()
+[Recovered Important](ransom/important.docx) \
+[Recovered secret](ransom/secret.txt)
 
 Further group analysis led to the conclusion that the encryption was done using xor(4) for bytes of data meaning the decryption method could also be xor(4). 
 
@@ -17,7 +17,7 @@ From there it became apparent that in order to decrypt a large ammount of files 
 
 [Developed Script]() \
 \
-[Recovered Important]()\
-[Recovered secret]()
+[Recovered Important](ransom/important2.docx) \
+[Recovered secret](ransom/secret2.txt)
 
 ## Ransomware 3
