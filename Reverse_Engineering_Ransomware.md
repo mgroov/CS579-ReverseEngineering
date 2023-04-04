@@ -28,7 +28,7 @@ The first steps were to define what I could. This included standard functions su
 The next step was to develop a script that could reverse the encryption process. In order to do this I simply have to xor the bytes against the key as this is the reverse of xor. I developed the below script and it decrypted the secret text.
 
 Decryptor
-```
+```python
 #create and hold the restored key
 key=['R','3','V','3','R','5','3']
 
