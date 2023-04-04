@@ -24,7 +24,9 @@ From there it became apparent that in order to decrypt a large ammount of files 
 
 Ransomware 3 contains a single executable. Similair to ransomware 2 strings revealed the key ``` delicious ``` and using this decrypted important.docx. However, assuming a large dataset it may be safer and faster than the previous methods to simply undo the encryption ourselves. In order to do this I loaded ransom ware 3 into ghidra and de-compiled it with the goal of finding the exact method of encryption. 
 
+The first steps were to define what I could. This included standard functions such as printf, strcmp and free. Then using previous knowledge from ransomware 1 and knowing the same author in decrypt I was able to find the  file pointers. As well as clarify a large number of helper variables. Finally, The structure of the encryption showed that the file was xor a bufffer of seven bytes with a key. The keygen appears to be static meaning that we only have to look at the restored key which is conviniently printed out each time the code runs. ``` R3V3R53 ```. 
 
+The next step was to develop a script that could reverse the encryption process. In order to do this I simply have to xor the bytes against the key as this is the reverse of xor. I developed the below script and it decrypted the secret text. 
 
 
 [Developed Script](ransom/decrypt3.sh) \
