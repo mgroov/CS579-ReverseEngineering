@@ -21,3 +21,13 @@ From there it became apparent that in order to decrypt a large ammount of files 
 [Recovered secret](ransom/secret2.txt)
 
 ## Ransomware 3
+
+Ransomware 3 contains a single executable. Similair to ransomware 2 strings revealed the key ``` delicious ``` and using this decrypted important.docx. However, assuming a large dataset it may be safer and faster than the previous methods to simply undo the encryption ourselves. In order to do this I loaded ransom ware 3 into ghidra and de-compiled it with the goal of finding the exact method of encryption. 
+
+
+
+
+[Developed Script](ransom/decrypt3.sh) \
+\
+[Recovered Important](ransom/important3.docx) \
+[Recovered secret](ransom/secret3.txt)
