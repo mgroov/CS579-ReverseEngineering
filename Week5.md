@@ -31,8 +31,8 @@ As suspected before our pass must be 19 chars following the final rule in rock.
 Next we go to paper:
 ```
 rule1:
-pass[8] ^ pass[10] >=10
-pass[13] ^ pass[10] >=10
+pass[8] ^ pass[10] <=10
+pass[13] ^ pass[10] <=10
 
 pas[3] && pass[15] == pass[8]^ pass[10] + '0'
 
@@ -56,14 +56,17 @@ Next we generate the final ruleset:
 
 ```
 allvals[a-p]
-pass[10] = pass[8] + 9
-pass[13] = pass[5] + 9
-pass[3] && pass[15] = '9'
+pass[10] = a pass[8] = 'b' # we cannot rand gen because xor is unpredictable
+pass[13] = a pass[5] = 'b'
+pass[3] && pass[15] && pass[18] && pass[0] = chr(51)
 pass[1] + pass[2] != pass[16] + pass[17]
-pass[9] = 'z'
+pass[9] = char(45) == pass[4] == pass[14]
+
 ```
+From there I made a key gen and it worked: 
+![image](https://user-images.githubusercontent.com/44854053/230703972-ceb53bb1-610b-4442-aba4-1aa2c8a634dd.png)
 
-
+[keygen](unsafecrack/solve5.py)
 
 ### Crackme no.2 
 
