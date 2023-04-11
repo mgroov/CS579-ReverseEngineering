@@ -78,7 +78,48 @@ The next thing I noticed was a for loop that appeared to go through the username
 
 Store the stream in serialstring. cut serial string from size-8 *2 to end of string. 
 
-loop through serial string from 0-8 and turn numbers into chars and store them in serial string 2 it then compares it to the serial number you put in. 
+loop through serial string from 0-8 and turn numbers into chars and store them in serial string 2 it then compares it to the serial number you put in.
+
+```python
+import random 
+
+# create a random user name between 8-12 chars
+size= random.randint(8,12)
+user=[0]*size
+
+sn=""
+#Assign each val an random char from a-z 
+for i in range(0,size):
+  user[i]=chr(random.randint(97,122))
+  print(user[i],end="")
+print() 
+
+#from ghidra if odd lower else upper
+for i in range(0,size):
+  if (i&1)==0:
+    sn+=str(ord(user[i].lower()))
+  else: 
+    sn+=str(ord(user[i].upper()))
+
+#print(sn)
+#first create a substring from size-8 *2 
+# then act like we are looping 0-8 by cutting it again
+sn = sn[(size-8)*2:]
+sn = sn[0:8]
+
+rsn = ""
+#loop through the serial string if i is a digit add it to our sn else skip
+for i in sn:
+  if i.isdigit():
+    rsn+= i
+
+
+sn  = int(sn)
+
+print(sn)
+
+
+```
 
 
 
