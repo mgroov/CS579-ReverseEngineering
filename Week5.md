@@ -73,9 +73,43 @@ pass[9] = char(45) == pass[4] == pass[14]
 
 ```
 From there I made a key gen and it worked: 
+```python
+import random
+
+pas=[0]*19
+for i in range(0,19):
+ pas[i] = chr(random.randint(97,112)) 
+ #print(pas[i])
+ 
+pas[10] = 'a'
+pas[13] = 'a'
+pas[8] = 'b'
+pas[5] ='b'
+
+#print((ord(pas[8]) ^ ord(pas[10])) + ord('0'))
+#print(chr(49))
+
+pas[3]=chr(51)
+pas[15]=chr(51) 
+pas[18]=chr(51) 
+#on a whim
+pas[0]=chr(51) 
+
+if(ord(pas[1]) + ord(pas[2]) ==  ord(pas[16]) + ord(pas[17])):
+	pas[16] = chr(ord(pas[16]) + 1) 
+
+pas[9]=chr(45)
+pas[14]=chr(45)
+pas[4]=chr(45)
+
+for i in pas:
+	print(i,end='')
+
+print()
+
+```
 ![image](https://user-images.githubusercontent.com/44854053/230703972-ceb53bb1-610b-4442-aba4-1aa2c8a634dd.png)
 
-[keygen](unsafecrack/solve5.py)
 
 ### Crackme no.2 
 
