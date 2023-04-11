@@ -94,7 +94,7 @@ In order to create the solution I did the following: ![Report Task 2](./week5/cr
 
 Crack me challenge 5 consisted of 1 file called crackme04. With 32bit and 64 bit versions. In order to solve it you must open the binary and patch instructions to bypass two instant fail conditions. Then create a script which given pid will duplicate the serial generation in the file. 
 
-In order to solve this I created this script which is ran as the original crack me is suspended in ltrace so I can feed it the pid. 
+In order to solve this I created this script which is ran as the patched crack me is suspended in ltrace so I can feed it the pid. I then feed the crackme the generated serial. 
 
 ```cpp
 
