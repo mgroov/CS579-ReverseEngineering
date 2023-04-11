@@ -70,5 +70,18 @@ From there I made a key gen and it worked:
 
 ### Crackme no.2 
 
+Crackme problem #2 consisted of a single file called crackme1. When running strings I found my first rule the username must be between 8 and 12 chars. 
+
+From there I opened the file in ghidra. I started by renaming some variables for example if bvar1 = true we know it was a bad length of username so it was renamed. 
+
+The next thing I noticed was a for loop that appeared to go through the username. At every odd char it turned the char to lower and for even it turned to upper. It then cast these values as ints and sends them to a stream?
+
+Store the stream in serialstring. cut serial string from size-8 *2 to end of string. 
+
+loop through serial string from 0-8 and turn numbers into chars and store them in serial string 2 it then compares it to the serial number you put in. 
+
+
+
+
 
 ### Crackme no.5 
