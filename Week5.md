@@ -168,13 +168,13 @@ From there I was able to export the patched binary and run it. I was able to det
 
 The next thing to do is define how the program generates its serial. The first thing it does is it defines a largenumber then it defines a string of chars. 
 
-while looping 7 times 
-it xors large num with the pid 
-adds large num with a specific char from the string and 92 stores in calcvalue
-runs a function called oil which:
-  iscalled with largenum and calcvalue
-  xors calcval with 4 
-  ors largenum with 3029491
+while looping 7 times \
+it xors large num with the pid \
+adds large num with a specific char from the string and 92 stores in calcvalue \
+runs a function called oil which: \
+  iscalled with largenum and calcvalue \
+  xors calcval with 4 \
+  ors largenum with 3029491 
 
 stores the integer cast of calc into a string
 concates that to the serial 
@@ -185,5 +185,56 @@ After the loops it then checks against the input.
 ![image](https://user-images.githubusercontent.com/44854053/231052623-386f7337-3fca-4f07-8122-7c187a006379.png)
 
 
+From there I generated a cpp script to generate the serial.
 
+```cpp
+
+#include <cstdio>
+#include <cstring>
+#include <string>
+using namespace std;
+
+unsigned int largenum;
+unsigned int calcval;
+string defstring;
+char genpas[360];
+char pass[500];
+size_t strnglngth;
+int pid;
+
+int main(int argc, char* argv[]){
+  
+ 
+largenum = 218232;
+defstring = "7030726e";
+pid = atoi(argv[1]);
+
+calcval=0;
+//genpas ="";
+
+for(int i=0;i<7;i = i+1){
+
+   largenum = pid ^ largenum;
+   //puts("here 1");
+   calcval = largenum + defstring[i] + 92;
+   calcval = calcval ^ 4;
+   //puts("here 2");
+   largenum = largenum | 3029491;
+   sprintf(genpas,"%d",calcval);
+   //puts("here 3");
+   strnglngth = strlen(genpas);
+   //puts("here 4");
+   strncat((char *)pass,genpas,strnglngth);
+   //puts("here 5");
+   largenum = largenum << 7;
+ }
+
+puts(pass);
+
+}
+
+```
+
+using ltrace to pause the program I ran my program and tested it.
+![image](https://user-images.githubusercontent.com/44854053/231063800-50a3ca7c-ddda-4acb-b4ad-55334cc015d4.png)
 
