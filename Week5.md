@@ -10,6 +10,9 @@ Next I loaded the 32 bit version into ghidra. The first step was to fix the main
 
 From there it seems to call rock paper and scissors in order. The first step was to correct rocks parameter to char* as it makes the most sense following from main. 
 
+![image](https://user-images.githubusercontent.com/44854053/231023889-b5d78727-4aae-47fe-a5e9-65397f0303b5.png)
+
+
 In rock there are a series of rules we have to avoid to avoid bomb. \
 rule1:
 ```
@@ -28,6 +31,8 @@ allvals [97-122]
 ```
 As suspected before our pass must be 19 chars following the final rule in rock.
 
+![image](https://user-images.githubusercontent.com/44854053/231023789-2b6648da-5836-49ae-9a5c-73ddaed8931c.png)
+
 Next we go to paper:
 ```
 rule1:
@@ -40,17 +45,21 @@ pas[3] && pass[15] == pass[8]^ pass[10] + '0'
 pass[18] ==pass[13] ^ pass[10] + 48
 
 ```
+![image](https://user-images.githubusercontent.com/44854053/231024030-b0bd5926-4af9-4d14-9745-b08c5ccd81f8.png)
 
 Next we go to scissors:
 ```
 pass[1] + pass[2] != pass[16]+pass[17]
 
 ```
+![image](https://user-images.githubusercontent.com/44854053/231024145-41b2989c-4c07-4683-94f6-41e985bf28a7.png)
+
 
 Finally we go to cracker:
 ```
 pass[14] + pass[4] + pass[9] != 135
 ```
+![image](https://user-images.githubusercontent.com/44854053/231024241-708b1293-9132-4beb-aa02-5fb59c5c7170.png)
 
 Next we generate the final ruleset:
 
@@ -133,5 +142,6 @@ I then tested my solution.
 
 
 
-
 ### Crackme no.5 
+
+
