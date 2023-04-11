@@ -52,7 +52,7 @@ Next we go to scissors:
 pass[1] + pass[2] != pass[16]+pass[17]
 
 ```
-![image](https://user-images.githubusercontent.com/44854053/231024145-41b2989c-4c07-4683-94f6-41e985bf28a7.png)
+![image](https://user-images.githubusercontent.com/44854053/231025119-31d7d346-1eba-41b2-a6a8-826d4294d523.png)
 
 
 Finally we go to cracker:
