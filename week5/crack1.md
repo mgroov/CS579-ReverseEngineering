@@ -74,11 +74,11 @@ import random
 
 pas=[0]*19
 for i in range(0,19):
- pas[i] = chr(random.randint(97,112)) 
+ pas[i] = chr(random.randint(97,112)) #generate random serial with char a-z
  #print(pas[i])
  
 pas[10] = 'a'
-pas[13] = 'a'
+pas[13] = 'a' #we set these to predict the behavior of xor 
 pas[8] = 'b'
 pas[5] ='b'
 
@@ -87,15 +87,14 @@ pas[5] ='b'
 
 pas[3]=chr(51)
 pas[15]=chr(51) 
-pas[18]=chr(51) 
-#on a whim
+pas[18]=chr(51) #set these to the known outputs of the xors
 pas[0]=chr(51) 
 
 if(ord(pas[1]) + ord(pas[2]) ==  ord(pas[16]) + ord(pas[17])):
 	pas[16] = chr(ord(pas[16]) + 1) 
 
 pas[9]=chr(45)
-pas[14]=chr(45)
+pas[14]=chr(45) #ensure that these add up to 135 to pass condition
 pas[4]=chr(45)
 
 for i in pas:
