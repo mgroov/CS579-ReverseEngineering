@@ -185,7 +185,7 @@ After the loops it then checks against the input.
 ![image](https://user-images.githubusercontent.com/44854053/231052623-386f7337-3fca-4f07-8122-7c187a006379.png)
 
 
-From there I generated a cpp script to generate the serial.
+From there I generated a cpp script to generate the serial. In order for it to run it requires the pid. You'll need g++ and run g++ filename.cpp. It will make a.out then run ./a.out pid
 
 ```cpp
 
