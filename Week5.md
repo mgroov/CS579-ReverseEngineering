@@ -76,9 +76,14 @@ From there I opened the file in ghidra. I started by renaming some variables for
 
 The next thing I noticed was a for loop that appeared to go through the username. At every odd char it turned the char to lower and for even it turned to upper. It then cast these values as ints and sends them to a stream?
 
+![image](https://user-images.githubusercontent.com/44854053/231022814-5a8b350e-f4eb-4608-b90e-e7890e779631.png)
+
+
 Store the stream in serialstring. cut serial string from size-8 *2 to end of string. 
 
-loop through serial string from 0-8 and turn numbers into chars and store them in serial string 2 it then compares it to the serial number you put in.
+loop through serial string from 0-8 and turn numbers of those chars add them into a string and store them in serial it then compares it to the serial number you put in.
+
+From there I followed the rules to generatea a python script. 
 
 ```python
 import random 
@@ -120,6 +125,10 @@ print(sn)
 
 
 ```
+I then tested my solution.
+
+![image](https://user-images.githubusercontent.com/44854053/231022697-8f39a440-2f36-428e-9f38-ab15aca2b705.png)
+
 
 
 
