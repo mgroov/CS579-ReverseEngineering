@@ -83,16 +83,16 @@ Crackme problem #2 consisted of a single file called crackme1. When running stri
 
 From there I opened the file in ghidra. I started by renaming some variables for example if bvar1 = true we know it was a bad length of username so it was renamed. 
 
-The next thing I noticed was a for loop that appeared to go through the username. At every odd char it turned the char to lower and for even it turned to upper. It then cast these values as ints and sends them to a stream?
+The next thing I noticed was a for loop that appeared to go through the username. At every odd char it turned the char to lower and for even it turned to upper. It then cast these values as ints and sends them to a stream.
 
 ![image](https://user-images.githubusercontent.com/44854053/231022814-5a8b350e-f4eb-4608-b90e-e7890e779631.png)
 
 
-Store the stream in serialstring. cut serial string from size-8 *2 to end of string. 
+It then sends the stream in serialstring. Creates a substring of serial string from size-8 *2 to end of string. 
 
-loop through serial string from 0-8 and turn numbers of those chars add them into a string and store them in serial it then compares it to the serial number you put in.
+I then loops through serial string from 0-8 and cast the number back into chars and adds them into a string and stores them in serial it then compares it to the serial number you put in.
 
-From there I followed the rules to generatea a python script. 
+From there I followed the rules to generatea a python script. Which will generate both the username and the expected serial for that username. 
 
 ```python
 import random 
@@ -132,7 +132,6 @@ sn  = int(sn)
 
 print(sn)
 
-
 ```
 I then tested my solution.
 
@@ -140,8 +139,8 @@ I then tested my solution.
 
 
 
-
-
 ### Crackme no.5 
+
+
 
 
