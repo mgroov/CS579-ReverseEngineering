@@ -166,5 +166,24 @@ From there I was able to export the patched binary and run it. I was able to det
 ![image](https://user-images.githubusercontent.com/44854053/231036281-5e43fc74-0a3a-4001-87d8-641502475cfd.png)
 
 
+The next thing to do is define how the program generates its serial. The first thing it does is it defines a largenumber then it defines a string of chars. 
+
+while looping 7 times 
+it xors large num with the pid 
+adds large num with a specific char from the string and 92 stores in calcvalue
+runs a function called oil which:
+  iscalled with largenum and calcvalue
+  xors calcval with 4 
+  ors largenum with 3029491
+
+stores the integer cast of calc into a string
+concates that to the serial 
+Finally it shifts the largenum by 7 
+
+After the loops it then checks against the input.
+
+![image](https://user-images.githubusercontent.com/44854053/231052623-386f7337-3fca-4f07-8122-7c187a006379.png)
+
+
 
 
