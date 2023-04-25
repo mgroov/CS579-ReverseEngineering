@@ -1,4 +1,4 @@
-global _start
+.global _start
 .section .text 
 _start:
     //xor to create the null values without null directly
