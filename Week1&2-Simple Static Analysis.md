@@ -1,5 +1,5 @@
 # Week 1 Simple Static Analysis
-  This week focused on the static analysis of various pieces of malware. By using tools such as strings,    PEview, dependency walker, PEiD, and upx. Some of the main takeaways included how to determine when a file is packed using tools like PEiD. As well as how to use system calls revealed by those tools to determine the nature of the malware. Finally, how to use static analysis to devise actionable countermeasures to viruses. 
+  These weeks focused on the static analysis of various pieces of malware. By using tools such as strings,    PEview, dependency walker, PEiD, and upx. Some of the main takeaways included how to determine when a file is packed using tools like PEiD. As well as how to use system calls revealed by those tools to determine the nature of the malware. Finally, how to use static analysis to devise actionable countermeasures to viruses. 
 
 ## Lab 1-1
   
