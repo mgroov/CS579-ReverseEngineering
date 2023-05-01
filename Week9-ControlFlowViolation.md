@@ -3,11 +3,11 @@
 This week was about using pwntools to insert a shell into a victim process. This task consisted of a couple of steps. First we need to find a memory leak to learn where our program runs
 . We then need to identify a buffer that is not properly managed to write to the stack. Finally we need to identify where to write to ret and input our shellcode. 
 
-### step 1: find vulnerabilities
+### Step 1: find vulnerabilities
 
 The first task was to run our victim code and identify the key vulnerabilities. 
 
-#### the memory leak
+#### The memory leak
 
 In order to find a memory leak we had to identify potential week points in the code. For example, our victim code pizza when ran appears to step through a pizza ordering porcess. 
 It requests a name a number of pizzas and the card number. 
@@ -39,4 +39,24 @@ print(leak)
 leak_int = int(leak,16)
 
 ```
+
+#### The second un-secured buffer
+
+Finding the memory leak was important beacuse it allows us to locate the potential range of our attack vector. Where we can insert the shellcode and its address. But perhaps e
+qually as important is finding a second buffer that is also unsecured such that we can overflow back to the return pointers. 
+
+This meant returnning to our victim process and seeing at what further points in the program that it could break. The first potential point was the number of pizzas however even though there was not proper type casting/input validation it seemed unlikely to contain what we need. 
+
+![image](https://user-images.githubusercontent.com/44854053/235508426-c79d969f-698d-4e34-9882-cd82a101a23b.png)
+
+
+The next place was the credit card number request.  I used a similair method to before to check for a potential overflow spot and it worked. 
+
+![image](https://user-images.githubusercontent.com/44854053/235508731-578d7e03-85f6-4195-9b29-91a7e51d90f9.png)
+
+
+### Step 2: Identifying where to write 
+
+From step 1 we have 
+
 
