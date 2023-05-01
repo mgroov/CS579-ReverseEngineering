@@ -10,10 +10,10 @@ In order to properly isolate the samples I am going to reverse engineer I took m
 I isolated the target system so that I can run dangerous malware and analyze their effects. Most importantly by isolating we prevent damage to our hardware as well as dangerous software such as worms from spreading to our entire network. Without proper isolation I can potentially damage and loose a piece of hardware or unintentionally unleash an attack on a network. 
 
 #### Analysis Tool(s)
-Visual Studio Code
-strings
-PEview
-dependency walker
-PEiD
-upx
+Visual Studio Code\
+strings\
+PEview and
+Dependency walker\
+PEiD\
+upx\
 ghidra 
